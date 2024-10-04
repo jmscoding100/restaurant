@@ -36,6 +36,17 @@ body{
 
 /* classes */
 
+.about-div{
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 3px 3px #aaa;
+}
+
+.banner-img{
+    height: 45vh;
+}
+
+
 .blurb{
     font-size: 1.7rem;
     color: var(--textcolor);
@@ -122,6 +133,11 @@ body{
 
 /* ids */
 
+
+#aboutSection{
+    padding: 40px 0;
+    background-color: var(--bg1);
+}
 
 #carouelSection{
     width: 100%;
