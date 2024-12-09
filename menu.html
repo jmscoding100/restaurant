@@ -12,6 +12,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <!-- header -->
     <header class="header" id="header">
         <section class="section" id="headerSection1">
@@ -100,7 +101,7 @@
                         <p class="blurb fst-italic text-center text-md-start">Top quality ingredients only in our kitchen!</p>
                     </div>
                     <div class="col-md-3 offset-md-6">
-                        <form action="" class="form search-form">
+                        <!-- <form action="" class="form search-form">
                             <div class="input-group">
                                 <input type="search" class="form-control">
                                 <lable class="input-group-text">
@@ -108,58 +109,109 @@
                                     <span class="visually-hidden"></span>
                                 </lable>
                             </div>
-                        </form>
+                        </form> -->
+                        <button type="button" class="btn cart-btn" id="cartBtn">
+                            <span id="cartItems">0</span> item(s) - $<span id="cartSubtotal">0.00</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
     </header>
-
-
-    <!-- main -->
-    <main class="main" id="main">
-        <section class="section" id="bannerSection">
-            <div class="container-fluid">
-                <img src="images/pizza.jpg" alt="a cheese pizza in a cardboard box" class="img-fluid banner-img w-100">
+<!-- main -->
+<main class="main menu-main" id="main">
+<!-- menu section -->
+<section class="section menu-section" id="menuSection">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="menu-header text-capitalize">our menu</h2>
+                <p class="menu-sologan text-capitalize">all items are made to order. we don't own a microwave!</p>
             </div>
-        </section>
-        <section class="section" id="aboutSection">
-            <div class="container">
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4" id="itemDiv">
+            <!-- <div class="col">
+                <figure class="figure item-figure">
+                    <img src="https://via.placeholder.com/150X90"alt="placeholder img" class="img-fluid image item-image figure-img" />
+                    <figcaption class="figure-caption item-caption">
+                        <span class="item-price" id="itemPrice">10.00</span>
+                    </figcaption>
+                    <p class="item-desc" id="itemDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="btn menu-btn text-capitalize" id="menuBtn">add to cart</button>
+                </figure>
+            </div> -->
+        </div>
+    </div>
+</section>
+<!-- checkout section -->
+<section class="section checkout-page d-none" id="checkoutPage">
+    <div class="bar">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="bar-text">
+                        <span class="home-switch">Home</span> &gt; Checkout
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section checkout-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="checkout-header">chechout</h2>
+                    <p class="checkout-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nihil saepe molestias?</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="chechout-item-count">
+                        <span id="checkoutItemCount"></span>
+                    </p>
+                </div>
                 <div class="row">
-                    <div class="col-md-8">
-                        <div class="about-div">
-                            <h2 class="about-heading text-danger text-uppercase">about</h2>
-                            <p class="about-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est iste, quia qui rerum placeat inventore debitis incidunt minima, natus nam nostrum. Eaque laborum, sed molestiae fugiat animi eveniet nostrum ratione corrupti incidunt porro ipsum facere aut exercitationem neque qui quos. Assumenda incidunt et amet temporibus officiis autem dolorum aperiam, odit consequatur esse quaerat, officia rerum reprehenderit atque facere eaque libero sed iure iste quas? Mollitia quo nemo ducimus rerum impedit sed repellendus aut eius alias voluptatem!
-                            </p>
-                            <p class="about-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere minus cum deleniti deserunt sequi nisi doloribus dicta quisquam totam aut, ducimus pariatur corrupti rerum nemo esse libero, nesciunt architecto, culpa tempora numquam. Suscipit earum nostrum aut ex similique expedita, incidunt at tempora, odio provident aperiam animi eum, repellendus deleniti?
-                            </p>
-                            <p class="about-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, facilis eius nesciunt at iure necessitatibus quam voluptatem nostrum placeat quos, vero consequuntur maiores atque quia sapiente cupiditate exercitationem accusantium nulla deleniti ducimus obcaecati! Numquam aliquid veritatis amet
-                            </p>
-                            <p class="about-text">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero minus inventore voluptatem, commodi debitis vel totam iusto eligendi quaerat necessitatibus modi animi! Quas adipisci quibusdam maiores autem minima qui accusantium expedita voluptas deserunt nobis! Doloremque repellendus aspernatur. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </div>
+                    <div class="col">
+                        <table class="table" id="table">
+                            <tr class="table-headers">
+                                <td>item</td>
+                                <td>price</td>
+                                <td>quantity</td>
+                                <td>subtotal</td>
+                            </tr>
+                            <!-- load items -->
+                            <tbody id="tbody"></tbody>
+                            <tr class="totals" id="totals">
+                                <td colspan="4">
+                                    <p class="total-subtotal" id="totalSubtotal">Subtotal:</p>
+                                    <p class="total-tax" id="totalTax">Tax:</p>
+                                    <p class="delivery-fee" id="deliveryFee">Delivery Fee:</p>
+                                    <p class="total-total" id="totalTotal">Total:</p>
+                                </td>
+                                <td class="total-values" id="totalValues">
+                                    <p class="subtotal-value" id="subtotalValue">0</p>
+                                    <p class="tax-value" id="taxValue">0</p>
+                                    <p class="delivery-fee-value" id="deliveryValue">0.00</p>
+                                    <p class="total-value">$
+                                        <span id="totalValue"></span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
-                    <div class="col-md-4">
-                        <figure class="figure my-figure">
-                            <img src="images/img3.jpg" alt="a chef smiling" class="img-fluid w-100 figure-img">
-                            <h2 class="figure-heading text-danger text-uppercase ps-4">Employment</h2>
-                            <figcaption class="figure-caption ps-4">Lorem ipsum dolor sit amet consectetur adipisicing.</figcaption>
-                        </figure>
-                        <figure class="figure my-figure">
-                            <img src="images/img6.jpg" alt="a burrito on a plate" class="img-fluid w-100 figure-img">
-                            <h2 class="figure-heading text-danger text-uppercase ps-4">Fresh Ideas</h2>
-                            <figcaption class="figure-caption ps-4">Lorem ipsum dolor sit amet consectetur adipisicing.</figcaption>
-                        </figure>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn confirm-btn text-capitalize" id="confirmBtn">confirm order</button>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+</section>
 
+</main>
+
+
+<!-- footer -->
     <footer class="footer" id="footer">
         <section class="section" id="footerSection1">
             <div class="container">
@@ -295,4 +347,6 @@
 
     </footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="js/apps.js"></script>
 </html>
