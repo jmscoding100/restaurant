@@ -219,6 +219,8 @@ class Store{
             }
         }
         })
+        cartBtn.style.backgroundColor = 'red'
+        cartBtn.style.color = 'white'
     }
 
     homeSwitch(){
@@ -271,7 +273,6 @@ class Store{
                 item.qty = 0 
             }
         })
-        confirmBtn.style.color = 'green'
     }
 }
 
