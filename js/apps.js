@@ -122,7 +122,7 @@ class Store{
                         <span class="item-price" id="itemPrice">${item.price}</span>
                     </figcaption>
                     <p class="item-desc" id="itemDesc">${item.desc}</p>
-                    <button class="btn menu-btn text-capitalize" id="menuBtn" data-id="${item.id}">add to cart</button>
+                    <button class="btn menu-btn text-capitalize btn-primary" id="menuBtn" data-id="${item.id}">add to cart</button>
             </figure>
             `
 
@@ -208,7 +208,7 @@ class Store{
 
                 tableRow.innerHTML+= `
                 <td id="itemImg">
-                    <img src="${item.img}" alt="${item.alt}" class="img-fluid item-img" />
+                    <img src="images/${item.imgUrl}" alt="${item.alt}" class="img-fluid item-img" />
                 </td>
                 <td class="unit-price">${item.price.toFixed(2)}</td>
                 <td class="item-quantity">${item.qty}</td>
@@ -271,6 +271,7 @@ class Store{
                 item.qty = 0 
             }
         })
+        confirmBtn.style.color = 'green'
     }
 }
 
